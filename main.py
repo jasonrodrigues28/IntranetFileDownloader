@@ -35,6 +35,6 @@ def download_files(base_url, save_dir):
 
 # Example Usage
 base_url = input("PASTE THE URL HERE: ")
-save_dir = r"C:\Users\Jason\Desktop\IntraSave\MCN\UNIT 4"  # Change to your save folder
+save_dir = r"C:\Users\Jason\Desktop\IntraSave"  # Change to your save folder
 download_files(base_url, save_dir)
 print("Download finished!")
