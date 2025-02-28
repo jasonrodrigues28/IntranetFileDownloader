@@ -2,6 +2,7 @@ import os
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+from tqdm import tqdm
 
 def download_files(base_url, save_dir):
     # Create the folder if it doesn't exist
@@ -16,7 +17,7 @@ def download_files(base_url, save_dir):
     soup = BeautifulSoup(response.text, 'html.parser')
     file_count = 0
 
-    for link in soup.find_all('a'):
+    for link in tqdm(soup.find_all('a')):
         href = link.get('href')  # Extract the hyperlink
         if href and not href.endswith('/') and not '?' in href:  # Skip folders and query params
             file_url = urljoin(base_url, href)  # Properly join the URL
@@ -35,6 +36,6 @@ def download_files(base_url, save_dir):
 
 # Example Usage
 base_url = input("PASTE THE URL HERE: ")
-save_dir = r"ENTER_FOLDER_LOCATION_ADDRESS"  # Save in your preferred folder location
+save_dir = r"C:\\Users\\Jason\\Desktop\\New folder"  # Save in your preferred folder location
 download_files(base_url, save_dir)
 print("Download finished!")
