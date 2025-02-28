@@ -16,6 +16,7 @@ Before running the script, install the necessary dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
 
 <b>HOW TO USE?</b>
 - Download the Zip and extract it.
